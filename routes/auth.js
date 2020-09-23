@@ -33,7 +33,7 @@ router.get("/facebook/callback",
     passport.authenticate("facebook"),
     (req, res) => {
         console.log(req.user);
-        res.redirect("http://localhost:3000/");
+        res.redirect("https://5f6b649ad4e80f408b690390--myalchemist.netlify.app/");
     });
 
 // Google Auth
@@ -43,13 +43,13 @@ router.get("/google", passport.authenticate("google", {
 router.get("/google/callback",
     passport.authenticate("google"),
         (req, res) => {
-            res.redirect("http://localhost:3000/");
+            res.redirect("https://5f6b649ad4e80f408b690390--myalchemist.netlify.app/");
         });
 
 router.get("/logout", (req, res) => {
     console.log("logging out!");
     user = {};
-    res.redirect("/");
+    res.redirect("https://5f6b649ad4e80f408b690390--myalchemist.netlify.app/");
 })
 
 router.post("/register", authController.register);
